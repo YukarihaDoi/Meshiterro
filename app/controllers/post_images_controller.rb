@@ -12,8 +12,17 @@ class PostImagesController < ApplicationController
   end
 
   def index
+    @post_images = PostImage.all
   end
 
   def show
+  end
+
+
+  # 投稿データのストロングパラメータ
+  private
+
+  def post_image_params
+    params.require(:post_image).permit(:shopname, :image, :caption)
   end
 end
