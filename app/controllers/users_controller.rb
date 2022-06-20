@@ -5,8 +5,11 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     # 下記の方法でもうまくいく
     # @user = current_user
-    @post_images = @user.post_images
+
+    # @post_images = @user.post_images
+    @post_images = @user.post_images.page(params[:page])
     # @user.post_imagesの場合は、ユーザーが投稿した投稿画像を全て取得
+    # ページネーション反映
   end
 
 
