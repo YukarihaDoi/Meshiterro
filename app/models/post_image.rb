@@ -5,7 +5,7 @@ class PostImage < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
 
-  # validates :shop_name, presence: true
+   validates :shopname, presence: true
    validates :image, presence: true
   # 保存が成功した場合はtrue、失敗した場合はfalseを返します。
 
